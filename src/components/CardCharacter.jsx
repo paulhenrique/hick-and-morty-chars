@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-function CardCharacter({character}) {
+function CardCharacter({ character }) {
   const dispatch = useDispatch();
   const handleFavorite = (character) => {
-    dispatch({type:'ADD_CHARACTER_TO_FAVORITES', character});
+    dispatch({ type: 'ADD_CHARACTER_TO_FAVORITES', character });
   }
   return (
     <div className="mt-3 col-md-4">
@@ -11,8 +11,8 @@ function CardCharacter({character}) {
         <img src={character.image} alt={character.name} className="rounded-circle mx-auto w-50 mt-4" />
         <h2 className="text-2xl text-center">{character.name}</h2>
         <button className="btn btn-primary" onClick={() => handleFavorite(character)} >Favoritar</button>
-  </div>
       </div>
+    </div>
   )
 }
 
