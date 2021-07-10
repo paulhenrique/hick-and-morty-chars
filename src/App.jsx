@@ -4,7 +4,7 @@ import CharacterList from './components/CharacterList';
 import {api} from './services/api';
 function App() {
   const dispatch = useDispatch();
-  
+
   React.useEffect(() => {
     async function getCharacterData() {
       const {data:{results}} = await api.get('/character');
@@ -17,7 +17,7 @@ function App() {
   }, [dispatch])
   return (
     <div className="container mx-auto">
-      <h1 className="text-5xl mt-5">Rick and Morty App</h1>
+      <h1 className="text-5xl py-5">Rick and Morty Chars</h1>
       <CharacterList></CharacterList>
     </div>
   );

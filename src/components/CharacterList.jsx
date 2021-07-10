@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 import CardCharacter from './CardCharacter';
 
 function CharacterList() {
-  const characters = useSelector(state => state);
+  const characters = useSelector(state => state.characters);
   console.log('here', characters);
   return (
-    <div>
-      {[1,2,3].map((m) => (
-        <CardCharacter key={m} />
+    <div className="row">
+      {characters.map((char) => (
+        <CardCharacter key={char.id} character={char} />
       ))}
     </div>
   )

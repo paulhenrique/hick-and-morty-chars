@@ -1,10 +1,18 @@
 export const SET_CHARACTERS = (state, action) => {
   return {
     ...state,
-    characters: [...state.characters, action.characters]
+    characters: action.characters
   };
 }
 
 export const ADD_CHARACTER_TO_FAVORITES = (state, action) => {
-  state.characters = [...state.characters, action.characters];
+  console.log(state.favoriteCharacters);
+  return {
+    ...state,
+    favoriteCharacters: [
+      ...state.favoriteCharacters,
+      action.character
+    ]
+  };
 }
+
