@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 import * as actions from './actions';
 const INITIAL_STATE = {
   characters: [],
-  favoriteCharacters: [],
+  favorites: [],
   info: {}
 };
 
@@ -14,6 +14,8 @@ function reducer(state = INITIAL_STATE, action) {
       return actions.SET_INFO(state, action);
     case 'ADD_CHARACTER_TO_FAVORITES':
       return actions.ADD_CHARACTER_TO_FAVORITES(state, action);
+    case 'REMOVE_CHARACTER_FROM_FAVORITES':
+      return actions.REMOVE_CHARACTER_FROM_FAVORITES(state, action);
 
     default:
       return state;

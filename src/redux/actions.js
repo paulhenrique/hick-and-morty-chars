@@ -8,10 +8,17 @@ export const SET_CHARACTERS = (state, action) => {
 export const ADD_CHARACTER_TO_FAVORITES = (state, action) => {
   return {
     ...state,
-    favoriteCharacters: [
-      ...state.favoriteCharacters,
+    favorites: [
+      ...state.favorites,
       action.character
     ]
+  };
+}
+
+export const REMOVE_CHARACTER_FROM_FAVORITES = (state, action) => {
+  return {
+    ...state,
+    favorites: state.favorites.filter(e => e !== action.character)
   };
 }
 
