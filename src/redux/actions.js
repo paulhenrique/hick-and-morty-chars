@@ -18,7 +18,7 @@ export const ADD_CHARACTER_TO_FAVORITES = (state, action) => {
 export const REMOVE_CHARACTER_FROM_FAVORITES = (state, action) => {
   return {
     ...state,
-    favorites: state.favorites.filter(e => e !== action.character)
+    favorites: state.favorites.filter(e => e.id !== action.character.id)
   };
 }
 

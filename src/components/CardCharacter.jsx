@@ -6,15 +6,14 @@ function CardCharacter({ character }) {
 
 
   const addToFavorites = (character) => {
-    dispatch({ type: 'ADD_CHARACTER_TO_FAVORITES', character: character.id });
+    dispatch({ type: 'ADD_CHARACTER_TO_FAVORITES', character });
   }
 
   const removeFromFavorites = (character) => {
-    dispatch({ type: 'REMOVE_CHARACTER_FROM_FAVORITES', character: character.id });
+    dispatch({ type: 'REMOVE_CHARACTER_FROM_FAVORITES', character });
   }
 
-  const isFavorite = favorites.filter(e => e === character.id).length !== 0;
-  console.log(isFavorite);
+  const isFavorite = favorites.filter(e => e.id === character.id).length !== 0;
 
   return (
     <div className="mt-3 col-md-4">

@@ -4,7 +4,6 @@ import CardCharacter from './CardCharacter';
 
 function CharacterList() {
   const characters = useSelector(state => state.characters);
-  console.log('here', characters);
   return (
     <div className="row">
       {characters.map((char) => (

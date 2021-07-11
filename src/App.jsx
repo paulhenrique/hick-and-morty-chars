@@ -9,7 +9,6 @@ function App() {
   React.useEffect(() => {
     async function getCharacterData() {
       const { data: { info, results } } = await api.get('/character');
-      console.log(results);
       dispatch({ type: 'SET_CHARACTERS', characters: results });
       dispatch({ type: 'SET_INFO', info: info });
     }
